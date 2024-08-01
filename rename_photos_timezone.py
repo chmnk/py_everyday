@@ -11,8 +11,11 @@ from dateutil import parser as dateparser
 PATH_images = '/media/maria/Maxtor/photos/2020/Каменоломни под Старицей/canon-share/'
 PATH_images = '/media/maria/Maxtor/photos/2020/Поход КБР/'
 PATH_images = '/media/maria/Maxtor/photos/2020/ПВД Аргуновская волость/'
+PATH_images = '/home/maria/Downloads/Photos-001/'
+PATH_images = '/home/maria/Downloads/Photos-mar_apr/'
 model_dict = {'X-A1': 'Fuji-X-A1',
               'Pixel 3': 'Pixel-3',
+              'Pixel 7': 'Pixel-7',
               'Mi MIX 2S': 'Mi-MIX-2S',
               'Canon PowerShot SX540 HS': 'Canon-PS-SX540-HS'
               }
@@ -68,8 +71,8 @@ def do_renaming(skip_corrected=True, print_only=True):
             print(model)
 
         model = model_dict[model]
-        if 'Fuji' not in model:
-            continue
+        # if 'Fuji' not in model:
+        #     continue
         if 'Fuji' in model:
             cur_time_new = modify_dt(dateparser.parse('{0} {1}'.format(year_month, day_time).replace('.', ':')))
 
